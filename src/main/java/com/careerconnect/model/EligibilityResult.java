@@ -1,0 +1,27 @@
+package com.careerconnect.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Value object that holds the result of an eligibility evaluation.
+ * Contains a boolean outcome and a list of human-readable reasons.
+ */
+public class EligibilityResult {
+
+    private boolean eligible;
+    private List<String> reasons;
+
+    public EligibilityResult(boolean eligible, List<String> reasons) {
+        this.eligible = eligible;
+        this.reasons = reasons != null ? new ArrayList<>(reasons) : new ArrayList<>();
+    }
+
+    public boolean isEligible() {
+        return eligible;
+    }
+
+    public List<String> getReasons() {
+        return new ArrayList<>(reasons);
+    }
+}
